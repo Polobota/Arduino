@@ -1,0 +1,33 @@
+#include <HCSR04.h>
+#include <Servo.h>
+
+#define bin_depth 13
+
+Servo robot_arm;
+
+UltraSonicDistanceSensor Bin_1(10, 11);
+UltraSonicDistanceSensor Bin_2(6, 5);
+
+void setup() {
+  // initialization code:
+  Serial.begin(9600);
+  robot_arm.attach(3);
+  robot_arm.write(0);
+}
+
+void loop() {
+  // main code:
+  Serial.println("Waste Status:");
+  Serial.println(-(Bin_2.measureDistanceCm()-bin_depth));
+
+  if(Bin_1.measureDistanceCm() <= 10)
+  {
+    robot_arm.write(180);
+    delay(4000);
+  }
+  else
+  {
+    robot_arm.write(0); 
+  }
+  delay(500);
+}
