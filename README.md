@@ -2,6 +2,7 @@ Arduino Waste Bin Status Monitor with Robotic Arm
 ### Description:
 This Arduino sketch monitors the status of waste bins using ultrasonic distance sensors and controls a robotic arm to empty the bins when they are full. The sketch continuously checks the distance from the bins using ultrasonic sensors and activates the robotic arm to empty the bins when the distance falls below a specified threshold.
 
+
 ### Components Required:
 - Arduino board (e.g., Uno)
 - Ultrasonic distance sensors (HC-SR04)
